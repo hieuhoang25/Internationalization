@@ -1,0 +1,18 @@
+<ul>
+  <li>{{'home'|translate}}</li>
+  <li>{{'about'|translate}}</li>
+  <li>{{'contact'|translate}}</li>
+</ul>
+<span>
+  {{'title'| translate}}
+</span>
+<select #selectedLang (change)="switchLanguage(selectedLang.value)">
+  <option *ngFor="let lang of translate.getLangs()" [value]="lang" [selected]="lang==translate.currentLang">{{lang}}
+  </option>
+</select>
+
+<button (click)="getMessageCheck()">Check</button>
+<span>{{message_check}}</span>
+
+<button (click)="getMessageCheckFromServer()">Check Server</button>
+<span>{{data}}</span>
