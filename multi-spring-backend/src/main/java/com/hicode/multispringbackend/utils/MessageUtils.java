@@ -34,4 +34,9 @@ public class MessageUtils {
         return messageSource.getMessage(resolvable, localeResolver.resolveLocale(request));
     }
 
+    public String getMessage(String name, Object ... params){
+        return messageSource.getMessage(name, params, localeResolver.resolveLocale(request));
+    }
+
+
 }
